@@ -5,11 +5,26 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 import json
 from .models import InfluencerInfo, SponsorInfo
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 
 @csrf_exempt
 def register(request):
-    return HttpResponse('hello world')
+
+    if(request.method=='POST'):
+        data=json.loads(request.body)
+        return JsonResponse({
+            'username':'username'
+        })
+    else:
+        return JsonResponse({
+            'message':'hello world'
+
+        })
+
+    
+
+
+
    # username=request.POST["username"]
     #first_name=request.POST["first_name"]
     #last_name=request.POST["last_name"]
