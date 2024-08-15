@@ -12,6 +12,7 @@ def register(request):
 
     if(request.method=='POST'):
         data=json.loads(request.body)
+        user = User.objects.create_user(username=data['username'],first_name=data['first_name'],last_name=data['last_name'],password=data['password'])
         return JsonResponse({
             'username':'username'
         })
