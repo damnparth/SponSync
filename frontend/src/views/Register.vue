@@ -3,15 +3,15 @@
         <input type="text" placeholder="username" required v-model="username">
         <input type="text" placeholder="first name" required v-model="first_name">
         <input type="text" placeholder="last name" required v-model="last_name">
-        <input type="radio" name="influencer" id="influencer">
-        <input type="">
-      
-
+     
+        
 
     
        
        
         <input type="password" placeholder="password" required v-model="password">
+        <input type="radio" name="influencer" id="influencer">
+        <input type="radio" name="sponsor" id="sponsor">
         <input type="confirm" placeholder="confirm password" required>
 
         <button @click="validateForm">submit</button>
