@@ -15,6 +15,7 @@ class SponsorInfo(models.Model):
      username=models.CharField(primary_key=True,max_length=40)
      first_name=models.CharField(max_length=30,default='none')
      last_name=models.CharField(max_length=40,default='none')
+     
 
      class Meta:
          db_table="SponsorInfo"

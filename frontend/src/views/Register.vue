@@ -14,6 +14,7 @@
         <input type="radio" name="influencer" id="influencer" v-model="userType">
         <label for="sponsor">sponsor</label>
         <input type="radio" name="sponsor" id="sponsor" v-model="userType"> -->
+      
         
         
         <select name="userType" id="userType" v-model="userType" required>
@@ -21,7 +22,9 @@
          <option value="sponsor">sponsor</option>
         </select>
         <br>
-        <input type="password" placeholder="confirm password" required>
+       
+        <input type="password" placeholder="confirm password" required v-model="confirm">
+
 
         <button @click="validateForm">submit</button>
 
@@ -50,10 +53,12 @@ export default {
         password:'',
         first_name:'',
         last_name:'',
-        userType:''
+        userType:'',
+        confirm:'',
     }
   },
   components:{Password},
+ 
   methods:
   {
       validateForm(){
@@ -65,6 +70,7 @@ export default {
             {'password':this.password},
             
         ]
+      
 
         if(isValidated)
         this.submitForm();
@@ -76,7 +82,8 @@ export default {
             first_name: this.first_name,
             last_name: this.last_name,
             password:this.password,
-            userType:this.userType
+            userType:this.userType,
+            confirm:this.confirm
 
 
         }
