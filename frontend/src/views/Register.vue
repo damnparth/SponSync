@@ -8,13 +8,24 @@
 
     
        
-       
+     
         <input type="password" placeholder="password" required v-model="password">
-        <input type="radio" name="influencer" id="influencer">
-        <input type="radio" name="sponsor" id="sponsor">
-        <input type="confirm" placeholder="confirm password" required>
+        <!-- <label for="influencer">influencer</label>
+        <input type="radio" name="influencer" id="influencer" v-model="userType">
+        <label for="sponsor">sponsor</label>
+        <input type="radio" name="sponsor" id="sponsor" v-model="userType"> -->
+        
+        
+        <select name="userType" id="userType" v-model="userType" required>
+            <option value="influencer" >influencer</option>
+         <option value="sponsor">sponsor</option>
+        </select>
+        <br>
+        <input type="password" placeholder="confirm password" required>
 
         <button @click="validateForm">submit</button>
+
+        <p>{{ userType }}</p>
 
      
 
@@ -29,8 +40,6 @@
 import axios from 'axios';
 
 import Password from 'primevue/password';
-
-import RadioButton from 'primevue/radiobutton';
 
 
 
@@ -56,6 +65,7 @@ export default {
             {'password':this.password},
             
         ]
+
         if(isValidated)
         this.submitForm();
     },
@@ -65,7 +75,9 @@ export default {
             username: this.username,
             first_name: this.first_name,
             last_name: this.last_name,
-            password:this.password
+            password:this.password,
+            userType:this.userType
+
 
         }
         axios.post('http://127.0.0.1:8000/userinfo/register/',userdata)
@@ -99,5 +111,8 @@ input{
 }
 button{
     cursor:pointer;
+}
+label{
+    margin-right: 700px;
 }
 </style>
