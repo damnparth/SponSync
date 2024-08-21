@@ -41,10 +41,7 @@ export default {
         axios.post('http://127.0.0.1:8000/userinfo/login/',{username:this.username, passText:this.passText})
         .then(Response=>
         {
-            if('message'=='hello world')
-        {
-            console.log('hello world')
-        }
+            setTimeout(()=>{this.$router.push('/')})
         }
         )
         .catch(console.log(Error));

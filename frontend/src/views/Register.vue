@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import router from '@/router';
 import axios from 'axios';
 
 import Password from 'primevue/password';
@@ -89,8 +90,8 @@ export default {
         }
         axios.post('http://127.0.0.1:8000/userinfo/register/',userdata)
         .then(response=>{
-            if('message'=='hello world')
-            console.log('hello')
+            setTimeout(() => {this.$router.push('/Login')}, 1500)
+            
 
         })
         .catch(error=>{
