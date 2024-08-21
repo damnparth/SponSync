@@ -30,10 +30,19 @@ def register(request):
     
 
 @csrf_exempt
-def login(request):
-    return JsonResponse({
-        'message':'hello world'
-    })
+def login_user(request):
+    if request.method=='POST':
+        login_data=json.loads(request.body)
+        user = authenticate(request,username=login_data['username'],password=login_data['passText'])
+        if user is not None:
+            login(request,user)
+
+
+
+
+        return JsonResponse({
+            "message":"hello world"
+        })
     
         
 

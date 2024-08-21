@@ -1,8 +1,9 @@
 <template>
     <form action="">
-        <input type="text" placeholder="username" required>
-        <input type="password" placeholder="password" required>
+        <input type="text" placeholder="username" required v-model="username">
+        <input type="password" placeholder="password" required v-model="passText">
         <button @click="validateForm">Submit</button>
+        
 
     </form>
   
@@ -14,6 +15,10 @@ import axios from 'axios';
 export default {
    data()
    {
+    return{
+        username:'',
+        passText:''
+    }
 
    },
    methods:{
@@ -22,7 +27,7 @@ export default {
         let isValidated=true;
         const fields=[
             {'username':this.username},
-            {'password':this.password}
+            {'passText':this.passText}
 
         ]
         if(isValidated)
@@ -32,12 +37,8 @@ export default {
     },
     submitForm()
     {
-        const userData={
-            username:this.username,
-            password:this.password
-
-        }
-        axios.post('http://127.0.0.1:8000/userinfo/login/',userData)
+        
+        axios.post('http://127.0.0.1:8000/userinfo/login/',{username:this.username, passText:this.passText})
         .then(Response=>
         {
             if('message'=='hello world')
@@ -46,7 +47,7 @@ export default {
         }
         }
         )
-        .catch(console.error());
+        .catch(console.log(Error));
         
     
     }
@@ -67,6 +68,11 @@ form{
 }   
 input{
     margin-bottom: 10px;
+    
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 25px;
+
 
 }
 
