@@ -29,7 +29,14 @@ const routes = [
     path:'/SponsorView',
     name:'sponsor',
     component:()=>import('../views/SponsorView.vue')
-  }
+  },
+  
+    {
+      path:'/Profile',
+      name:'profile',
+      component:()=>import('../views/Profile.vue')
+    }
+  
 ]
 
 
