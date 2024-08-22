@@ -101,10 +101,12 @@ export default {
         }
         axios.post('http://127.0.0.1:8000/userinfo/register/',userdata)
         .then(response=>{
+            console.log('hello world')
+            setTimeout(() => {this.$router.push('/Login')}, 3000)
             
         
         
-            setTimeout(() => {this.$router.push('/Login')}, 1500)
+            
             
 
         })

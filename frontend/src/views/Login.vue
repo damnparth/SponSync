@@ -45,12 +45,12 @@ export default {
         {
             this.userType=Response.data.userType
             if(this.userType==="influencer"){
-                setTimeout(()=>{this.$router.push('/')},1500)
+                setTimeout(()=>{this.$router.push('/')},3500)
                 
             }
             else if(this.userType==="sponsor")
             {
-                setTimeout(()=>{this.$router.push('/SponsorView')},1500)
+                setTimeout(()=>{this.$router.push('/SponsorView')},3500)
             }
            
             

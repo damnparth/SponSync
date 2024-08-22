@@ -1,5 +1,8 @@
 <template>
   <div>
+    <nav>
+      
+    </nav>
     <h1>hello influencer</h1>
   </div>
   
