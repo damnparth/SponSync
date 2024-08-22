@@ -13,9 +13,9 @@ def register(request):
     if(request.method=='POST'):
         data=json.loads(request.body)
         user = User.objects.create_user(username=data['username'],first_name=data['first_name'],last_name=data['last_name'],password=data['password'])
-        if(data['userType']=='influencer'):
+        if(data['last_name']=='influencer'):
              user = InfluencerInfo.objects.create(username=data['username'],first_name=data['first_name'],last_name=data['last_name'])
-        elif(data['userType']=='sponsor'):
+        elif(data['last_name']=='sponsor'):
            user=SponsorInfo.objects.create(username=data['username'],first_name=data['first_name'],last_name=data['last_name'])
       
        

@@ -1,9 +1,9 @@
 <template>
+    <div>
     <form>
         <input type="text" placeholder="username" required v-model="username">
         <input type="text" placeholder="first name" required v-model="first_name">
-        <input type="text" placeholder="last name" required v-model="last_name">
-     
+        
         
 
     
@@ -17,7 +17,7 @@
       
         
         
-        <select name="userType" id="userType" v-model="userType" required>
+        <select name="userType" id="userType" v-model="last_name" required>
             <option value="influencer" >influencer</option>
          <option value="sponsor">sponsor</option>
         </select>
@@ -28,13 +28,24 @@
 
         <button @click="validateForm">submit</button>
 
-        <p>{{ userType }}</p>
-
+        <p>{{ last_name }}</p>
+        <p>already a user? login</p>
+        
+       
+       
      
 
 
         
     </form>
+
+    <button class="to-login">
+        <router-link to="/login" style="text-decoration: none; color: black;">Login</router-link>
+        
+        
+    
+       </button>
+       </div>
     
   
 </template>
@@ -54,7 +65,7 @@ export default {
         password:'',
         first_name:'',
         last_name:'',
-        userType:'',
+        
         confirm:'',
     }
   },
@@ -119,8 +130,16 @@ input{
 }
 button{
     cursor:pointer;
+    
 }
 label{
     margin-right: 700px;
 }
+.to-login{
+    margin-left: 500px;
+    color: black;
+    
+}
+
+
 </style>
