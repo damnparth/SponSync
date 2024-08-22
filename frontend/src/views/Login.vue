@@ -17,7 +17,9 @@ export default {
    {
     return{
         username:'',
-        passText:''
+        passText:'',
+        influencer:'influencer',
+        sponsor:'sponsor'
     }
 
    },
@@ -41,10 +43,27 @@ export default {
         axios.post('http://127.0.0.1:8000/userinfo/login/',{username:this.username, passText:this.passText})
         .then(Response=>
         {
-            setTimeout(()=>{this.$router.push('/')})
+            this.userType=Response.data.userType
+            if(this.userType==="influencer"){
+                setTimeout(()=>{this.$router.push('/')},1500)
+                
+            }
+            else if(this.userType==="sponsor")
+            {
+                setTimeout(()=>{this.$router.push('/SponsorView')},1500)
+            }
+           
+            
         }
         )
-        .catch(console.log(Error));
+        .catch(error => {
+        console.error('Error:', error); 
+
+    
+       
+    });
+        
+       
         
     
     }

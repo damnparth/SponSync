@@ -34,15 +34,27 @@ def login_user(request):
     if request.method=='POST':
         login_data=json.loads(request.body)
         user = authenticate(request,username=login_data['username'],password=login_data['passText'])
+        
         if user is not None:
             login(request,user)
+            if user.last_name == "sponsor":
+                return JsonResponse({"userType": "sponsor"})
+            elif user.last_name == "influencer":
+                return JsonResponse({"userType": "influencer"})
+        else:
+            return JsonResponse({"error": "Invalid credentials"}, status=401)
+    
+    return JsonResponse({"message": "Method not allowed"}, status=405)
+            
+            
+                
+            
+        
 
 
 
 
-        return JsonResponse({
-            "message":"hello world"
-        })
+        
     
         
 

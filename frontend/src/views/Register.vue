@@ -1,5 +1,5 @@
 <template>
-    <div>
+    
     <form>
         <input type="text" placeholder="username" required v-model="username">
         <input type="text" placeholder="first name" required v-model="first_name">
@@ -29,7 +29,7 @@
         <button @click="validateForm">submit</button>
 
         <p>{{ last_name }}</p>
-        <p>already a user? login</p>
+        <!-- <p>already a user? login</p> -->
         
        
        
@@ -39,13 +39,13 @@
         
     </form>
 
-    <button class="to-login">
+    <!-- <button class="to-login">
         <router-link to="/login" style="text-decoration: none; color: black;">Login</router-link>
         
         
     
-       </button>
-       </div>
+       </button> -->
+       
     
   
 </template>
@@ -101,6 +101,9 @@ export default {
         }
         axios.post('http://127.0.0.1:8000/userinfo/register/',userdata)
         .then(response=>{
+            
+        
+        
             setTimeout(() => {this.$router.push('/Login')}, 1500)
             
 
