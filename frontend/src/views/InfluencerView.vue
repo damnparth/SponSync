@@ -6,14 +6,18 @@
 
     </div>
     <div class="navbar-left">
-      <button class="login"><router-link to="/Profile" style="color:white; text-decoration: none;font-weight: bold;">Profile</router-link></button>
-
+      <button class="login" @click="viewsNotifs">Notifications</button>
+      
       
       
       <br>
       <br>
     </div>
     <div class="navbar-right">
+      <button class="login"><router-link to="/Profile" style="color:white; text-decoration: none;font-weight: bold;">Profile</router-link></button>
+
+
+
      
       
       
@@ -27,6 +31,11 @@
 
     
     </div>
+    <div class="div">
+    <input type="text" placeholder="Search Campaigns" class="search-bar">
+    
+  
+  </div>
      
   </div>
   
@@ -77,5 +86,15 @@ export default {
 
   
   
+}
+.search-bar{
+  margin-left: 100px;
+  
+  margin-top: 20px;
+  height: 35px;
+  width: 700px;
+  padding-left: 500px;
+  margin-right: 100px;
+
 }
 </style>
