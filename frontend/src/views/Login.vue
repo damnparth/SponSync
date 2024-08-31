@@ -45,7 +45,7 @@ export default {
         {
             this.userType=Response.data.userType
             if(this.userType==="influencer"){
-                setTimeout(()=>{this.$router.push('/')},3500)
+                setTimeout(()=>{this.$router.push('/InfluencerView')},3500)
                 
             }
             else if(this.userType==="sponsor")

@@ -3,8 +3,8 @@ import InfluencerView from '../views/InfluencerView.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: '/InfluencerView',
+    name: 'InfluencerView',
     component: InfluencerView
   },
   {
@@ -35,7 +35,14 @@ const routes = [
       path:'/Profile',
       name:'profile',
       component:()=>import('../views/Profile.vue')
-    }
+    },
+    
+      {
+        path: '/',
+        name: 'Home',
+        component: ()=>import('../views/Home.vue')
+      },
+    
   
 ]
 

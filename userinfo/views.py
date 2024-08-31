@@ -45,6 +45,13 @@ def login_user(request):
             return JsonResponse({"error": "Invalid credentials"}, status=401)
     
     return JsonResponse({"message": "Method not allowed"}, status=405)
+
+
+@csrf_exempt
+def logout_user(request):
+    logout(request)
+    return JsonResponse({'message' : "Hello world"})
+
             
             
                 

@@ -1,56 +1,31 @@
 <template>
-  <div>
-  <div class="navbar">
+    
+
+        <div class="navbar">
     <div class="container-fluid">
       <h2>SponSync</h2>
 
     </div>
     <div class="navbar-left">
-      <button class="login"><router-link to="/Profile" style="color:white; text-decoration: none;font-weight: bold;">Profile</router-link></button>
-
       
       
       <br>
       <br>
     </div>
     <div class="navbar-right">
-     
-      
-      
-      <button @click="logoutForm" style="color:white; text-decoration: none; font-weight: bold;"> Logout</button>
+        <button class="login"><router-link to="/Register" style="color:white; text-decoration: none;font-weight: bold;">Register</router-link></button>
+        <button class="login"><router-link to="/Login" style="color:white; text-decoration: none;font-weight: bold;">Login</router-link></button>
 
       
-      
-   
-      
-    </div>
 
-    
+      
     </div>
-     
-  </div>
+    </div>
   
 </template>
 
 <script>
-
 export default {
-  name: 'InfluencerView',
-  components: {
-    
-  },
-  data(){
-    return{
-
-    }
-  },
-  methods:{
-    logoutForm()
-    {
-      axois.post
-      
-    }
-  }
 
 
 }
@@ -62,6 +37,11 @@ export default {
   background-color: #EED3D9;
   padding:10px;
   text-align: right;
+  
+
+
+  
+
 }
 .navbar-left{
   display:flex;
@@ -78,4 +58,5 @@ export default {
   
   
 }
+
 </style>
