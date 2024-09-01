@@ -1,6 +1,9 @@
 <template>
     <div class="profile">
-        <h1 style="margin-left: 170px; padding-top: 20px;">hello user</h1>
+        <h1 style="margin-left: 170px; padding-top: 20px;">hello {{ username  }}</h1>
+
+        
+
     </div>
   
 </template>
@@ -14,6 +17,10 @@ export default {
             first_name:'',
             
         }
+    },
+    mounted()
+    {
+        this.username=sessionStorage.getItem('username')
     }
 
 

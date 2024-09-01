@@ -38,9 +38,9 @@ def login_user(request):
         if user is not None:
             login(request,user)
             if user.last_name == "sponsor":
-                return JsonResponse({"userType": "sponsor"})
+                return JsonResponse({"userType": "sponsor","username":user.username})
             elif user.last_name == "influencer":
-                return JsonResponse({"userType": "influencer"})
+                return JsonResponse({"userType": "influencer","username":user.username})
         else:
             return JsonResponse({"error": "Invalid credentials"}, status=401)
     

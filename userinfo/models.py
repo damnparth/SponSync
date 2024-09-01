@@ -20,4 +20,12 @@ class SponsorInfo(models.Model):
      class Meta:
          db_table="SponsorInfo"
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    email = models.EmailField(max_length=254, unique=True)
+    profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
+    bio = models.TextField(blank=True, null=True)
+
+
+
 # Create your models here.
