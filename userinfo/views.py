@@ -52,6 +52,26 @@ def logout_user(request):
     logout(request)
     return JsonResponse({'message' : "Hello world"})
 
+@csrf_exempt
+def user_profile(request):
+    if(request.method=="POST"):
+        bio=json.loads(request.body)
+        print(bio)
+        a = InfluencerInfo.objects.get(username=bio['username'])
+        print(a)
+        
+        a.bio=bio['bio']
+
+        a.save()
+        print(a.bio)
+        
+        
+        
+
+        return JsonResponse({'message':'mei is so prettyyyyyyyyyyyyy'})
+    return JsonResponse({'message':'poosay'})
+
+
             
             
                 
